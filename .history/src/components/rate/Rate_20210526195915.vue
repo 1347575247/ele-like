@@ -1,0 +1,41 @@
+<template>
+	<div class="rate">
+    <div class="progress-box">
+      <p>
+        <span>金币1</span>
+        / 
+        <span>4</span>
+      </p>
+      
+      <van-progress 
+        :percentage="50"
+        pivot-text=""
+        color="#ffaa0c"
+       />
+    </div>
+	</div>
+</template>
+
+<script>
+  import {Progress} from 'vant'
+	export default{
+		components:{
+      [Progress.name]:Progress
+    },
+    setup(props, ctx) {
+
+    }
+	}
+</script>
+
+<style lang='scss' scoped>
+  .progress-box {
+    text-align: center;
+    position: relative;
+    width: 3.684211rem;
+    top: 0.526316rem;
+    >p {
+      margin-bottom: 0.157895rem;
+    }
+  }
+</style>
