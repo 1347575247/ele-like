@@ -24,7 +24,7 @@ export default function AddrSelectModel() {
     Toast.success({
       message: '选择新地址成功',
       iconSize: '60',
-      duration: 800,
+      duration: 1000,
       // 关闭时让路由返回上一级
       onClose: () => {
         $router.back()

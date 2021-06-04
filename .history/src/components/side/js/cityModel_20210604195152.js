@@ -39,12 +39,7 @@ function cityModel(){
 			proxy.$emit('changSide',val)
     },
     // 当前地址
-    addrInfo: computed(() => {
-      if(getStore('address')) {
-        return JSON.parse(getStore('address'))
-      }
-      return {}
-    })
+    addrInfo: reactive(defaultAddr)
 	})
 	
 	

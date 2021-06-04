@@ -20,7 +20,7 @@
 			</div>
 			<!-- 当前地址 -->
       <div class="now-addr">
-        <p class="p-spacing">当前定位</p>
+        <p class="p-spacing">当前地址</p>
         <!-- 定位 -->
         <div class="location p-spacing clearfix">
           <p>广东省深圳市荷坳路99号</p>

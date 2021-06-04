@@ -22,14 +22,12 @@ export default function AddrSelectModel() {
     setStore('nowAddr', JSON.stringify(item))
     // 成功提示
     Toast.success({
-      message: '选择新地址成功',
+      message: '选择地址成功',
       iconSize: '60',
-      duration: 800,
-      // 关闭时让路由返回上一级
-      onClose: () => {
-        $router.back()
-      }
+      duration: 1000,
     });
+    
+    $router.back()
   }
 
   function toAddressEdit(item) {

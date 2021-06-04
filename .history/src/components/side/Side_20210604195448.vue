@@ -20,7 +20,7 @@
 			</div>
 			<!-- 当前地址 -->
       <div class="now-addr">
-        <p class="p-spacing">当前定位</p>
+        <p class="p-spacing">当前地址</p>
         <!-- 定位 -->
         <div class="location p-spacing clearfix">
           <p>广东省深圳市荷坳路99号</p>
@@ -33,7 +33,7 @@
 
       <!-- 收货地址 -->
       <div class="recv-addr">
-        <p class="p-spacing">我的地址</p>
+        <p class="p-spacing">历史地址</p>
         <ul class="add-list">
           <li class="item p-spacing" v-for="(item,i) in addrInfo" :key="i">
             <div class="personal">

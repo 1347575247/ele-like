@@ -20,16 +20,7 @@ export default function AddrSelectModel() {
   // 选中地址时将该地址保存到localStorage
   function selected(item) {
     setStore('nowAddr', JSON.stringify(item))
-    // 成功提示
-    Toast.success({
-      message: '选择新地址成功',
-      iconSize: '60',
-      duration: 800,
-      // 关闭时让路由返回上一级
-      onClose: () => {
-        $router.back()
-      }
-    });
+    $router.back()
   }
 
   function toAddressEdit(item) {
