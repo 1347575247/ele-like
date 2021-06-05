@@ -97,13 +97,15 @@
 
 <style lang="scss" scoped>
 .menu {
+  margin-bottom: 2.368421rem;
   .menu_recommend {
     margin-top: 0.533333rem; //20
     .recommend_title {
       margin-left: 0.4rem; //15
       padding: 0.266666rem 0; //10
       font-size: 0.586666rem; //22
-      font-weight: 700;
+      font-weight: 600;
+
     }
     .recommend_view {
       overflow-x: auto;
