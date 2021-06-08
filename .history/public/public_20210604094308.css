@@ -109,4 +109,8 @@ img{vertical-align:top;}
 .ddd{background-color: #ddd;}
 
 
+/* 对vant样式的公共修改 */
+.van-toast {
+  background-color: rgba(0, 0, 0, .7)!important;
+}
 

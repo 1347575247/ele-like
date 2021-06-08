@@ -34,7 +34,6 @@ export default function rateModel() {
     // 成功通知
     const toast = Toast.success({
       message: '评论成功',
-      iconSize: '60',
       onClose: () => {
         proxy.$router.push('/home')
       }

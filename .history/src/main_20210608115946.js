@@ -6,9 +6,8 @@ import formatImgSrc from './plugin/fomatImgSrc.js'
 import vFixed from './plugin/fixedDireactive.js'
 import store from './store'
 import autoTop from './plugin/autoTop'
-import '@/assets/public.css'
+// import '@/assets/public.css'
 import initDatas from '@/utils/initDatas'
-import vantConfig from '@/plugin/vant'
 
 // 初始化数据
 initDatas()
@@ -17,10 +16,6 @@ initDatas()
 // Vue.prototype.$axios=axios
 // 全局配置 
 const app=createApp(App)
-
-// 按需注册vant组件
-vantConfig(app)
-
 /* vue3.0通过globalProperties 进行挂载 axios*/
 app.config.globalProperties.$axios=axios
 app.config.globalProperties.$formatImgSrc=formatImgSrc
