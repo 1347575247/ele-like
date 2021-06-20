@@ -1,5 +1,5 @@
 /* 首页模块 */
-import {getCurrentInstance,toRefs,reactive,onMounted,computed} from 'vue'
+import {getCurrentInstance,toRefs,reactive,onMounted,computed, watch} from 'vue'
 function homeModel(){
 	const {proxy}= getCurrentInstance();
 	const data =reactive({
@@ -20,7 +20,7 @@ function homeModel(){
 		// 获取到分类的数据
 		var fooddatas=data.foodType;
 		if(fooddatas){
-			fooddatas=data.foodType.entries;
+			fooddatas=data.foodType;
 			var arr=[];//存放切割的数据
 			do{
 				arr.push(fooddatas.splice(0,10))
@@ -34,13 +34,18 @@ function homeModel(){
 	
 	onMounted(()=>{
 		/* 获取分类数据(首页轮播) */
-		proxy.$axios('/foodtype').then(res=>{
+		proxy.$axios('/v1/home/foodtype').then(res=>{
 			// console.log(res)
 			data.foodType=res.data
 			// console.log(res.data)
     })
     
-	})
+  })
+  
+  watch(() => data.foodType, (n, o) => {
+    console.log(o, n)
+  })
+
 	return{
 		spliceFood,
     ...toRefs(data),

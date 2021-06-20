@@ -48,6 +48,16 @@ app.get('/api/detail', (req, res) => {
   res.json(data ? data : null)
 })
 
+app.get('/api/comments', (req, res) => {
+  const data = require('./datas/comments.json')
+  res.json(data ? data : null)
+})
+
+app.get('/api/merchants', (req, res) => {
+  const data = require('./datas/merchants.json')
+  res.json(data ? data : null)
+})
+
 // 开启监听
 app.listen(4000,() =>{
 	console.log('4000端口已经启动')

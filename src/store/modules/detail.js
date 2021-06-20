@@ -1,7 +1,7 @@
 
 const formatData = (state, key)=> {
   if(state.detailData) {
-    return JSON.parse(state.detailData[key].body)
+    return state.detailData[key]
   }
   return null
 }

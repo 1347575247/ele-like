@@ -48,7 +48,7 @@ function elistModel(){
   // 获取新数据
   const getNewElistData = (offset, len, cb) => {
     /* 获取商家列表 */
-    proxy.$axios('/list', {
+    proxy.$axios('/v1/home/restaurants', {
       params: {
         offset: offset, // 当前数据索引
         len: len  // 获取数据长度
@@ -80,23 +80,23 @@ function elistModel(){
       data.elistData = res.data
     })
 
-
+    let len = 8,
+        offset = 0;
     const scrollFn = (e) => {
       data.st=_html.scrollTop || _body.scrollTop;
       data.st = Math.ceil(data.st)
       data.ct=_html.clientHeight || _body.clientHeight
       data.sh=_html.scrollHeight || _body.scrollHeight
 
-      let len = 8,
-          offset = 0;
+      
       // console.log(data.st, data.ct, _html.scrollHeight)
       if(data.st + data.ct >= data.sh) {
         console.log("我滑到底部了")
         offset += len
         getNewElistData(offset, len, res => {
-          data.elistData = {
-            data: [...data.elistData.data, ...res.data.data],
-          }
+          data.elistData = [
+            ...data.elistData, ...res.data
+          ]
           // console.log(data.elistData)
         })
       }
@@ -118,7 +118,7 @@ function elistModel(){
     $router.push({
       path: '/detail/menu',
       query:{
-        id: item.restaurant.id
+        id: item.id
       }
     })
   }

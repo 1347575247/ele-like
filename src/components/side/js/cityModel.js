@@ -125,9 +125,8 @@ function cityModel(){
 	
 	onMounted(()=>{
 		/* 获取城市列表 */
-		proxy.$axios('/citylist').then((res)=>{
-					   // console.log(res)
-					   data.cityList=res.data
+		proxy.$axios('/v1/home/citylist').then((res)=>{
+      data.cityList=res.data
     })
     
 	})

@@ -37,6 +37,7 @@ function orderDetailModel(){
     foodState: computed(() => {
       const resId = $route.query.resId
       const obj = $store.state.cart.foods[resId]
+      console.log(obj)
       if(obj) {
         let res = Object.assign({}, obj)
         delete res.total

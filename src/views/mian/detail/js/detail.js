@@ -16,11 +16,10 @@ function detailModel() {
   })
 
   const getDetailData = (id) => {
-    proxy.$axios('/detail', {
+    proxy.$axios('/v1/detail/menu', {
       params: {id}
     }).then(res => {
       $store.commit('detail/initDetailData',res.data)
-      // console.log(rst)
     })
   }
 

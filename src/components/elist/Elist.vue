@@ -1,38 +1,38 @@
 <template>
   <div class="good-list" v-if="itemData">
-    <div class="good-item" v-for="(item, i) in itemData.data" :key="i" :style="showActive(i)" @click="toDetail(item)">
+    <div class="good-item" v-for="(item, i) in itemData" :key="i" :style="showActive(i)" @click="toDetail(item)">
       <div class="img-box">
         <img
-          :src="$formatImgSrc(item.restaurant.image_path)"
+          :src="$formatImgSrc(item.image_path)"
           alt=""
         />
-        <span class="img_arror" v-if="selectedNum(item.restaurant.id)">{{selectedNum(item.restaurant.id)}}</span>
+        <span class="img_arror" v-if="selectedNum(item.id)">{{selectedNum(item.id)}}</span>
       </div>
       <div class="desc">
         <div class="title-box">
-          <h2>{{item.restaurant.name}}</h2>
+          <h2>{{item.name}}</h2>
           <div class="feedback">
             <span class="iconfont iconxuanzekuang"></span>
             <span>...</span>
           </div>
         </div>
         <div class="star-box">
-          <van-rate v-model="item.restaurant.rating" allow-half readonly size=9 color="#ffd21e"/> 
-          <span class="">{{"月售"+item.restaurant.recent_order_num+"单"}}</span>
+          <van-rate v-model="item.rating" allow-half readonly size=9 color="#ffd21e"/> 
+          <span class="">{{"月售"+item.recent_order_num+"单"}}</span>
         </div>
         <div class="discount-box">
-          <h2 class="sm-font t_ellipsis">￥{{item.restaurant.float_minimum_order_amount}}起送 | 配送￥{{item.restaurant.float_delivery_fee}}</h2>
-          <h3 class="sm-font">{{calDistance(item.restaurant.latitude, item.restaurant.longitude)}} | {{item.restaurant.order_lead_time}}分钟</h3>
+          <h2 class="sm-font t_ellipsis">￥{{item.float_minimum_order_amount}}起送 | 配送￥{{item.float_delivery_fee}}</h2>
+          <h3 class="sm-font">{{calDistance(item.latitude, item.longitude)}} | {{item.order_lead_time}}分钟</h3>
         </div>
         <ul class="tag-list">
-          <li class="cate sm-font" v-for="(tag, j) in item.restaurant.flavors" :key="j">
+          <li class="cate sm-font" v-for="(tag, j) in item.flavors" :key="j">
           {{tag.name}}
         </li>
         </ul>
 
-        <ActivityList :activities="item.restaurant.activities" class="activity-list" :style="showActive(i)"></ActivityList>
+        <ActivityList :activities="item.activities" class="activity-list" :style="showActive(i)"></ActivityList>
         <div class="activity-num" @click.stop="showActivityFn(i)">
-          <span>{{ item.restaurant.activities.length }}个活动</span>
+          <span>{{ item.activities.length }}个活动</span>
           <span class="iconfont icon-xiala"></span>
         </div>
         
@@ -44,7 +44,7 @@
             >
 
             <div class="activity-num">
-              <span>{{item.restaurant.activities.length}}个活动</span>
+              <span>{{item.activities.length}}个活动</span>
               <span class="iconfont icon-xiala"></span>
           </div>
           </div>

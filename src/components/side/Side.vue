@@ -248,7 +248,6 @@
       }
 
 		}
-		
 		.side_city{
 			position: absolute;
 			top: 0;

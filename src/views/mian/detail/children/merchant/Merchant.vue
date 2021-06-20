@@ -1,5 +1,7 @@
 <template>
-  <div>商家信息</div>
+  <div class="merchant">
+    商家信息
+  </div>
 </template>
 
 <script>

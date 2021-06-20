@@ -1,4 +1,4 @@
-import { Form, Field, Cell, Button, RadioGroup, Radio, Area, Popup, Overlay, Picker, Toast, Icon } from 'vant'
+import { Form, Field, Cell, Button, RadioGroup, Radio, Area, Popup, Overlay, Picker, Toast, Icon, Rate, ImagePreview, Swipe } from 'vant'
 
 export default app => {
   app.use(Form),
@@ -12,5 +12,8 @@ export default app => {
   app.use(Overlay),
   app.use(Picker),
   app.use(Toast),
-  app.use(Icon)
+  app.use(Icon),
+  app.use(Rate),
+  app.use(ImagePreview),
+  app.use(Swipe)
 }

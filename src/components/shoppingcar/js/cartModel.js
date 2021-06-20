@@ -105,6 +105,7 @@ export default function cartModel(props) {
   })
 
   const basePrice = computed(() => {
+    console.log(totalPrice, data.rst.piecewise_agent_fee.rules[0].price)
     return data.rst.piecewise_agent_fee.rules[0].price
   })
   return {

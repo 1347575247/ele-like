@@ -3,9 +3,9 @@ import axios from 'axios'
 //创建一个axios实例
 const service = axios.create({
 	// 它可以通过设置一个 `baseURL` 便于为 axios 实例的方法传递相对 URL
-	baseURL: 'http://localhost:4000/api',//服务器地址
+	baseURL: 'http://localhost:8001/api',//服务器地址
 	//设置请求超时的时间
-	timeout: 2000
+	timeout: 2000 * 1000
 });
 
 // 添加请求拦截器
